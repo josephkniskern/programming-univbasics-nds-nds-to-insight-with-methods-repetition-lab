@@ -25,10 +25,20 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
+  list = []
+  source.each do |hash|
+    hash.each_value { |value| list << value }
+  end
+
+  return list
   # Write this implementation
 end
 
 def total_gross(source)
+  gross = 0
+  hash = directors_totals(source)
+  hash.each_value { |value| gross += value }
+  return gross
   # Write this implementation
   #
   # Should use methods:
@@ -39,5 +49,3 @@ def total_gross(source)
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
 end
-
-
